@@ -1,2 +1,2 @@
-streamlit==1.11.0
+streamlit
 st-gsheets-connection
