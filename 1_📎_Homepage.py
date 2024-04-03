@@ -10,7 +10,7 @@ st.set_page_config (
 )
 
 st.title("Main")
-st.sidebar.success("select page")
+
 
 conn = st.connection("gsheets", type=GSheetsConnection)
 
