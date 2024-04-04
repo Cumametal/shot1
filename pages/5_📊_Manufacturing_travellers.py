@@ -17,6 +17,11 @@ st.subheader("")
 
 # Inicializar variables, cliente_input, user_name
 
+if 'Master_plan' not in st.session_state or 'clientes_df'not in st.session_state or 'Master_traveller_df'not in st.session_state:
+    st.session_state.Master_plan= ''
+    st.session_state.Master_traveller_df= ''
+    st.session_state.clientes_df= ''
+
 if 'client_input' not in st.session_state or 'user_name' not in st.session_state or 'descripcion' not in st.session_state or 'pm_asignado' not in st.session_state or 'rfq_inquiry_date' not in st.session_state or 'rfq_mail' not in st.session_state or 'numero_RFQ' not in st.session_state:
     st.session_state.client_input = ''
     st.session_state.user_name = ''
@@ -57,7 +62,7 @@ General_operations = General_operations.dropna(how = 'all')
 
 Master_plan_df = pd.DataFrame(Master_plan)
 Master_traveller_df = pd.DataFrame(Master_traveller)
-#st.session_state.Master_traveller_df = Master_traveller_df
+st.session_state.Master_traveller_df = Master_traveller_df
 
 # Función para extraer valores basados en el estado "Open"
 def extract_open_values(Master_plan_df):
